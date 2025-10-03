@@ -1,32 +1,22 @@
 {
-  "name": "blog-aggregator",
+  "name": "gator",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsx ./src/index.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cyberdeeb/blog-aggregator.git"
+    "start": "tsx ./src/index.ts",
+    "generate": "drizzle-kit generate",
+    "migrate": "drizzle-kit migrate"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
-  "type": "module",
-  "bugs": {
-    "url": "https://github.com/cyberdeeb/blog-aggregator/issues"
-  },
-  "homepage": "https://github.com/cyberdeeb/blog-aggregator#readme",
   "devDependencies": {
-    "@types/node": "^24.5.2",
-    "drizzle-kit": "^0.31.4",
-    "tsx": "^4.20.5",
-    "typescript": "^5.9.2"
+    "@types/node": "^22.10.1",
+    "drizzle-kit": "^0.30.1",
+    "tsx": "^4.19.1",
+    "typescript": "^5.7.2"
   },
   "dependencies": {
-    "drizzle-orm": "^0.44.5",
-    "postgres": "^3.4.7"
+    "drizzle-orm": "^0.38.1"
   }
 }

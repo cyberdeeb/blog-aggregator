@@ -5,11 +5,11 @@ export type CommandHandler = (
 
 export type CommandsRegistry = Record<string, CommandHandler>;
 
-export async function registerCommand(
+export function registerCommand(
   registry: CommandsRegistry,
   cmdName: string,
   handler: CommandHandler
-): Promise<void> {
+): void {
   registry[cmdName] = handler;
 }
 
@@ -23,5 +23,5 @@ export async function runCommand(
     throw new Error(`Unknown command: ${cmdName}`);
   }
 
-  handler(cmdName, ...args);
+  await handler(cmdName, ...args);
 }
