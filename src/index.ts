@@ -9,6 +9,7 @@ import {
   handlerDeleteAllUsers,
   handlerListUsers,
 } from './commands/users.js';
+import { handlerAgg } from './commands/aggregate';
 
 async function main() {
   const args = process.argv.slice(2);
@@ -26,6 +27,7 @@ async function main() {
   registerCommand(commandsRegistry, 'register', handlerRegister);
   registerCommand(commandsRegistry, 'reset', handlerDeleteAllUsers);
   registerCommand(commandsRegistry, 'users', handlerListUsers);
+  registerCommand(commandsRegistry, 'agg', handlerAgg);
 
   try {
     await runCommand(commandsRegistry, cmdName, ...cmdArgs);
