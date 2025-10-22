@@ -13,12 +13,12 @@ export async function getUser(name: string) {
   return firstOrUndefined(result);
 }
 
-export async function getAllUsers() {
-  return await db.select().from(users);
+export async function deleteUsers() {
+  await db.delete(users);
 }
 
-export async function deleteAllUsers() {
-  await db.delete(users).where(eq(users.id, users.id));
+export async function getUsers() {
+  return db.select().from(users);
 }
 
 export async function getUserById(id: string) {
